@@ -1,0 +1,157 @@
+page-cart {
+    // 当没有商品时出现
+    .cartBox{
+        position: relative;
+        width:100%;
+        overflow: hidden;
+        margin-top:100px;
+        text-align: center;
+    }
+    .noneCart{
+        width: 100%;
+        font-size: 200px;
+        text-align: center;
+        color:#777;
+    }
+    .cartBox button{
+        margin-top:20px;
+    }
+    //有商品时出现
+    .product-top{
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #fff;
+        margin-top:-7px;
+        padding:10px 0;
+        
+    }
+    .checkBox{
+        width: 17px;
+        height: 17px;
+        background: #fff;
+        border:1px solid #ccc;
+        margin-left:10px;
+    }
+    .product-content ion-item-sliding{
+        margin-top:2px;
+    }
+    .product-content ion-item{
+        padding:0;
+    }
+    .product-content .item-inner{
+        border:none !important;
+    }
+    .product-content .checkBox{
+        margin:25px 10px 0 15px;
+    }
+    .checkBox>ion-icon{
+        width:100%;
+        font-size: 24px;
+        height:100%;
+        text-align: center;
+        line-height: 15px;
+        color:#fff;
+        background: red;
+    }
+    
+    .product-content .pro-box{
+        padding-left:15px;
+        overflow: hidden;
+    }
+    .product-content .pro-box img{
+        max-width: 70px;
+        max-height: 70px;
+    }
+    .product-content .pro-box>h6{
+        font-size: 12px;
+        word-break: break-all;
+        white-space: normal;
+        width:120px;
+        letter-spacing: .5px;
+        height:auto;
+        float: left;
+        padding-left: 5px;
+        transform: scale(.9);
+    }
+    .product-content .pro-box>.sum{
+        position: absolute;
+        right:20px;
+        top:15px;
+    }
+    .product-content .pro-box>.delete{
+       position: absolute;
+       right:20px;
+       top:40px;
+    }
+    .product-content .pro-btm{
+        margin-left:57px;
+        width:100%;
+    }
+     .product-content .pro-btm>select{
+        float:left;
+        width:50%;
+        height:28px;
+        color:#777;
+     }
+     .product-content .pro-btm>.count{
+        margin-left:5%;
+        float:left;
+        width:25%;
+        padding:0 2%;
+        border:1px solid #ccc;
+        border-radius: 5px;
+     }
+     .product-content .pro-btm>.count>input{
+        width:35%;
+        border:none;
+        text-align: center;
+        font-size: 14px;
+     }
+    .product-content .pro-btm>.count>a{
+         display: inline-block;
+         width:30%;
+         color:#777;
+         font-size: 20px;
+         text-align: center;
+     }
+     //确定结算flex框
+    .footer ion-grid{
+        padding:0;
+    }
+     .footer .navFooter{
+    padding:0;
+    background: #F2EAEA;
+    }
+    .footer .navFooter ion-col{
+    text-align: center;
+    }
+    .footer .navFooter button{
+    font-size: 24px;
+    color:#777;
+    background: none;
+    }
+    .footer .pay{
+        background: #fff;
+    }
+     .footer .pay .total{
+        width:60%;
+        
+     }
+     .footer .pay .total>p{
+        padding:5px;
+        text-align: right;
+     }
+     .footer .pay .total>p>span{
+        color:red;
+        font-size:16px;
+     }
+     .footer .pay .total>.express{
+        padding-left:5px;
+        text-align: right;
+        color:#777;
+     }
+     .footer .pay button{
+        width:38%;
+     } 
+}

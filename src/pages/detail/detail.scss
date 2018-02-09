@@ -1,0 +1,242 @@
+page-detail {
+    h5{
+        font-size:13px;
+    }
+    .title{
+        background: #fff;
+        width:100%;
+        overflow: hidden;
+        padding:10px;
+    }
+    .title>button{
+        height:20px;
+        font-size:12px;
+        transform: scale(.9);
+        padding:8px;
+    }
+    .title>h3{
+        font-size: 18px;
+    }
+    .checkBox{
+        position: relative;
+        width:100%;
+        height:30px;
+        line-height: 30px;
+         background: #fff;
+         padding:0 10px;
+         margin:5px 0;
+    }
+    .checkBox>ion-icon{
+        float:right;
+        margin-top:10px;
+        font-size: 16px;
+    }
+    .checkBox span{
+        color:red;
+    }
+    .qq{
+        background: #fff;
+    }
+    .qq ion-col{
+        text-align: center;
+    }
+    .qq b{
+        color:#ccc;
+    }
+    .recommend{
+        position: relative;
+        margin-top: 5px;
+        background: #fff;
+        padding: 5px;
+    }
+    .recommend ion-slide{
+        width:33.33333% !important;
+        padding:0 1%;
+    }
+    .recommend p{
+        height:32px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding:0 5px;
+    }
+    .recommend span{
+        display: block;
+        color:red;
+        padding:5px 0;
+    }
+    .relative1{
+        position: relative;
+    }
+    .relative1 ion-icon{
+        font-size: 20px;
+    }
+    .relative1 .absolute1{
+        position: absolute;
+        left: 7px;
+        top:30px;
+        width:100%;
+    }
+    #footer{
+        background: #F0DEDE;
+        padding:0;
+    }
+
+     #footer ion-col{
+         padding:0;
+     }
+    #footer button{
+        border-radius: 0;
+        margin:0;
+         height:45px;
+        width:100%;
+    }
+    #footer button ion-icon{
+        margin-bottom: 8px;
+        font-size: 18px;
+        text-align: center;
+    }
+    #footer button ion-icon i{
+        display: inline-block;
+        width: 20px;
+        height:20px;
+        position: absolute;
+        top:-2px;
+        left:10px;
+        font-style: normal;
+        background: red;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        color:#fff;
+    }
+    #footer button span{
+        font-size: 12px;
+        letter-spacing: 2px;
+        transform: scale(.9);
+        left:-5px;
+    }   
+    //-- 购物车弹出框
+    .upBox{
+        width:100%;
+        height:100%;
+        display:flex;
+        z-index: 10000;
+        transition: all .1s linear;
+        visibility: hidden;
+    }
+     .upBox>.boxBg{
+         width:100%;
+        height:100%;
+        display:absolute;
+        z-index: 100;
+        background:rgba(0,0,0,.5);
+     }
+    .upBox>.content{
+        z-index: 1000;
+        width:100%;
+        background:#fff;
+        position: absolute;
+        bottom: -250px;
+        left:0;
+        transition: all .5s linear;
+    }
+
+    .upBox>.content>a>img{
+        position: absolute;
+        max-width: 60px;
+        left:20px;
+        top:-30px;
+        box-shadow: 1px 1px 5px;
+    }
+    .upBox>.content>.top{
+        width: 100%;
+        position: relative;
+        height:50px;
+        border-bottom: 1px solid #ccc;
+    }
+    .upBox>.content>.top>span{
+        position: absolute;
+        left: 90px;
+        top:20px;
+        color:red;
+    }
+    .upBox>.content>.top>span>b{
+        font-size: 16px;
+    }
+    .upBox>.content>.weight{
+        padding:0 10px;
+    }
+    .upBox>.content>.weight>dl>dd{
+        display: inline-block;
+        padding:5px;
+        border:1px solid #ccc;
+        margin-top:5px;
+        margin-left:5px;
+        border-radius:5px;
+        box-sizing: border-box;
+    }
+    .upBox>.content>.weight>dl>dd.show{
+        background: orange;
+        border:none;
+    }
+    .upBox>.content>.weight>dl>dd.show>a{
+        color:#fff;
+    }
+    .upBox>.content>.weight>.count{
+        padding:5px 0 20px 0;
+        width:100%;
+        overflow:hidden;
+    }
+    .upBox>.content>.weight>.count>span{
+        float: left;
+        margin-top:7px;
+    }
+    .upBox>.content>.weight>.count>.sum{
+        float: left;
+        margin-left:20px; 
+    }
+    .upBox>.content>.weight>.count>.sum>input{
+        width:30px;
+        height:30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        float: left;
+    }
+    .upBox>.content>.weight>.count>.sum>a{
+        background: #ccc;
+        width: 20px;
+        height:20px;
+        float: left;
+        margin-top:5px;
+        line-height: 20px;
+        text-align: center;
+    }
+    .upBox>.content>.weight>.count>.sum>.ctrl-l{
+        border-radius: 5px 0 0 5px;
+    }
+    .upBox>.content>.weight>.count>.sum>.ctrl-r{
+          border-radius: 0 5px 5px 0;
+    }
+    .upBox>.content>.weight>.count>.stock{
+        margin: 8px 0 0 20px;
+        float: left;
+    }
+    // //图文弹出框
+    // .picDetail{
+    //     width:100%;
+    //     height:100%;
+    //     display:flex;
+    //     z-index: 10000;
+    //     left:0;
+    //     top:0;
+    // }
+    // .picDetail>.box{
+    //      width:100%;
+    //      display: relative;
+    //      top:0;
+    //      left:0;
+    //     height:100%;
+    // }
+    
+}

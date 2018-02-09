@@ -1,0 +1,106 @@
+page-index {
+    
+    .nav>ion-col{
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.nav ion-col img{
+    max-width: 70%;
+}
+.font-1{
+    font-size: 0.8em;
+    width:100%;
+    color:#777;
+    position: absolute;
+    left:0;
+}
+ /*--新品上架--*/
+.new-arrival{
+    position: relative;
+}
+.new-arrival>img{
+    height:50px;
+}
+.new-arrival>.box{
+    position: absolute;
+    left:50%;
+    margin-left: -37.5px;
+    text-align: center;
+}
+.new-arrival>.box>h6{
+    margin:10px 0 0 0;
+    font-size:14px;
+}
+.new-arrival>.box>p{
+    margin:3px 0;
+    font-size: 8px;
+    transform: scale(.8);
+    
+}
+.new-products>.col>.box{
+    background: #fff;
+    width:100%;
+    padding:0 5px;
+}
+.new-products>.col{
+    padding:3px;
+}
+.new-products>.col:nth-child(2n-1){
+    padding-left:0;
+}
+.new-products>.col:nth-child(2n){
+    padding-right:0;
+}
+.new-products>.col>.box>p{
+    height:32px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.new-products>.col>.box>span{
+    display: block;
+    color:#F03E00;
+    padding-bottom:5px;
+}
+.passion{
+    padding:10px 20px;
+    margin-top:6px;
+}
+.passion .passion-r{
+    position: relative;
+    padding:10px;
+    border-left:1px solid #ccc;
+}
+.passion .passion-r p{
+    transform: scale(.8);
+}
+.passion .box{
+    position: absolute;
+}
+/*--联系我们--*/
+.footer{
+    padding:20px;
+    text-align: center;
+}
+.list-ul>li{
+    width:25%;
+    text-align: center;
+}
+.list-ul>li:not(:first-child){
+    border-left: 1px solid #ccc;
+}
+//底部导航栏
+.footer{
+    padding:0;
+    background: #F2EAEA;
+}
+.footer ion-col{
+    text-align: center;
+}
+.footer button{
+    font-size: 24px;
+    color:#777;
+    background: none;
+}
+}

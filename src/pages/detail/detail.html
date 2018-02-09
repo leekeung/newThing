@@ -1,0 +1,183 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header style="background:#E0D3D3;z-index:100">
+  
+  <ion-grid>
+    <ion-row align-items-center style="color:red;height:30px;">
+       <ion-col col-2>
+        <button ion-button clear style="padding:0" (click)="back()">
+          <ion-icon style="font-size:2.1em;color:red" class="ion-ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-8 style="font-family:STCaiyun;text-align:center;">
+        <img src="assets/img/navlogo.jpg" style="width:35%" alt="">
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" menuToggle>
+          <ion-icon style="font-size:2.1em;color:red" name="menu"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" (click)="tabSerach()">
+        <ion-icon style="font-size:2.1em;color:red" name="search"></ion-icon>
+        </button>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="detailSelf" style="margin-top:40px;background:#F2EAEA">
+  <!--轮播图-->
+  <ion-slides style="height:auto;" speed=1000 pager loop=true>
+    <ion-slide *ngFor="let item of selfImg">
+      <img [src]="'assets/'+item" alt="">
+    </ion-slide>
+  </ion-slides>
+  <!--标题-->
+  <div class="title">
+    <h5>{{detailSelf.title}}</h5>
+    <button style="color:#fff;background:orange" small ion-button>满300享八折</button>
+    <button ion-button small style="color:#fff;background:orange">满200减20</button>
+    <h3 style="color:red">￥{{detailSelf.price}}</h3>
+  </div>
+  <!--功能-->
+  <div class="checkBox" (click)="showCart()">
+    已选 <span>重量:{{isShow?weight2:weight1}}</span>
+    <ion-icon color="danger" ion-right name="checkmark"></ion-icon>
+  </div>
+  <div class="checkBox" (click)="showPicDetail()">
+    <span>点击查看图文详情</span>
+    <ion-icon ion-right style="color:#777;font-size:18px;margin-top:5px" class="ion-ios-arrow-dropright"></ion-icon>
+  </div>
+  <ion-row class="qq">
+    <ion-col col-4>
+      <ion-icon color="primary" class="ion-logo-tux"></ion-icon>
+      QQ客服
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon color="secondary" class="ion-logo-twitch"></ion-icon>
+      微信客服
+    </ion-col>
+    <ion-col col-4>
+      <ion-icon color="danger" class="ion-logo-github"></ion-icon>
+      官方微博
+    </ion-col>
+  </ion-row>
+  <!--商品评价-->
+  <div class="checkBox" style="margin-bottom:0">
+    商品评价 <span>0%</span> 好评度
+    <div class="fr">
+      <b>0人评价</b>
+      <ion-icon  name="ios-arrow-dropright"></ion-icon>
+    </div>
+  </div>
+  <div class="checkBox" style="margin:0">
+    有图片的评价
+    <div class="fr">
+      <b>0人评价</b>
+      <ion-icon  name="ios-arrow-dropright"></ion-icon>
+    </div>
+  </div>
+  <!--相关推荐-->
+  <div class="recommend">
+    <h5>相关推荐</h5>
+    <ion-slides >
+        <ion-slide [navPush]="detailPage" [navParams]="{id:item.pid}" *ngFor="let item of detailBro" >
+          <a href="#"><img [src]="'assets/'+item.img1" alt=""></a>
+          <p>{{item.title}}</p>
+          <span>￥{{item.price}}</span>
+        </ion-slide>
+    </ion-slides>
+  </div>
+  <br><br><br><br><br><br>
+</ion-content>
+
+
+  <!--点击购物车弹出框-->
+  <div class="upBox" *ngIf="detailSelf" [ngStyle]="upBox[0]">
+    <div class="boxBg" (click)="closeCrat()"></div>
+    <div class="content"  [ngStyle]="contentStyle[0]">
+      <a href="#"><img [src]="'assets/'+detailSelf.img1" alt=""></a>
+      <div class="top">
+        <span>￥<b>120.00</b></span>
+        <button (click)="closeCrat()" ion-button clear class="fr">
+          <ion-icon style="font-size:18px;color:#000;font-weight:bold" class="ion-ios-close"></ion-icon>
+        </button>
+      </div>
+      <div class="weight">
+        <dl>
+          <dt>重量</dt>
+          <dd (click)="toggle1()" [ngClass]="{show:!isShow}">
+            <a href="#">{{weight1}}</a></dd>
+          <dd (click)="toggle2()" [ngClass]="{show:isShow}">
+            <a href="#">{{weight2}}</a></dd>
+        </dl>
+        <div class="count">
+          <span>购买数量</span>
+          <div class="sum">
+            <a href="#" (click)="ctrl_l()" class="ctrl-l"><ion-icon class="ion-ios-arrow-back"></ion-icon></a>
+            <input type="text" [(ngModel)]="sum">
+            <a href="#" (click)="ctrl_r()" class="ctrl-r"><ion-icon class="ion-ios-arrow-forward"></ion-icon></a>
+          </div>
+          <div class="stock">
+            (库存<span>{{detailSelf.stock}}</span>件)
+          </div>
+        </div>
+      </div>
+      <button  ion-button block (click)="addToCart()" 
+      style="border-radius:0;margin:0;background:orange;letter-spacing:2px;">加入购物车</button>
+    </div>
+    <!--点击图文详情-->
+    <!--<ion-list style="z-index:20000">
+      <ion-item style="width:100%" *ngFor="let item of selfImg">
+        <img [src]="'assets/'+item" alt="">
+      </ion-item>
+    </ion-list>-->
+  </div>
+  
+
+  
+<ion-footer>
+  
+  <ion-grid id="footer">
+    <ion-row>
+      <ion-col col-2>
+        <button class="relative1" ion-button clear style="text-align:center">
+          <ion-icon name="ios-home" [navPush]="pageIndex" style="color:#4DC6EE;">
+          </ion-icon>
+          <span class="absolute1" >首页</span>
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button class="relative1" [navPush]="pageCart" ion-button clear style="text-align:center">
+          <ion-icon name="ios-cart" style="color:#4DC6EE;">
+            <i>{{cartLine}}</i>
+          </ion-icon>
+          <span class="absolute1" >购物车</span>
+        </button>
+      </ion-col>
+      <ion-col col-2>
+        <button class="relative1" [navPush]="pageNotFound" ion-button clear style="text-align:center">
+          <ion-icon name="ios-git-merge" style="color:#4DC6EE;">
+          </ion-icon>
+          <span class="absolute1" >分享</span>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button (click)="showCart()" block style="background:orange;">加入购物车</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button block color="danger">立即购买</button>       
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  </ion-footer>
+
+  

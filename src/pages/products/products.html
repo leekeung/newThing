@@ -1,0 +1,119 @@
+<!--
+  Generated template for the ProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  
+  <ion-grid style="background:#E0D3D3;z-index:100">
+    <ion-row align-items-center style="color:red;height:30px;">
+       <ion-col col-2>
+        <button ion-button clear style="padding:0" (click)="back()">
+          <ion-icon style="font-size:2.1em;color:red" class="ion-ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-8 style="font-family:STCaiyun;text-align:center;">
+        <img src="assets/img/navlogo.jpg" style="width:35%" alt="">
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" menuToggle>
+          <ion-icon style="font-size:2.1em;color:red" name="menu"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" [navPush]="tabSearch">
+        <ion-icon style="font-size:2.1em;color:red"name="search"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="top-btn">
+    <ion-row >
+      <ion-col col-2>
+        <button icon-button (click)="changeList()">
+          <ion-icon class="ion-ios-list-box-outline"></ion-icon>
+        </button>
+        <button icon-button (click)="changeList()">
+          <ion-icon class="ion-ios-keypad"></ion-icon>        
+        </button>
+      </ion-col>
+      <ion-col col-5 offset-2>
+        <button icon-button>
+          <ion-icon class="ion-ios-stats"></ion-icon>
+          销量
+        </button>
+        <button icon-button (click)="Onprice()">
+          <ion-icon class="ion-logo-yen"></ion-icon>      
+          价格
+          <ion-icon class="ion-ios-arrow-round-up" *ngIf="isPriceUp"></ion-icon>
+          <ion-icon class="ion-ios-arrow-round-down" *ngIf="!isPriceUp"></ion-icon>          
+        </button>  
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button>
+          <ion-icon class="ion-ios-calendar"></ion-icon>
+          上架时间
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content padding>
+  <br><br><br><br>
+  <ion-row class="new-products" *ngIf="!isPriceSort">
+    <ion-col  [navPush]="detailPage"  [navParams]="{id:item.pid}"
+     *ngFor="let item of products" col-6 [ngStyle]="setListStyle()">
+      <div class="box">
+        <a href="#" ><img [ngStyle]="setImgStyle()" [src]="'assets/'+item.img1" [alt]="item.title"></a>
+        <p [ngStyle]="setPStyle()">{{item.title}}</p>
+        <span>￥{{item.price}}</span>
+      </div>
+    </ion-col>
+  </ion-row>
+       <!--价格降序时显示-->
+  <ion-row class="new-products" *ngIf="isPriceSort">
+    <ion-col [navPush]="detailPage"  [navParams]="{id:item.pid}"
+     *ngFor="let item of priceList" col-6 [ngStyle]="setListStyle()">
+      <div class="box">
+        <a href="#" ><img [ngStyle]="setImgStyle()" [src]="'assets/'+item.img1" [alt]="item.title"></a>
+        <p [ngStyle]="setPStyle()">{{item.title}}</p>
+        <span>￥{{item.price}}</span>
+      </div>
+    </ion-col>
+  </ion-row>
+  <br><br><br><br><br><br>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabIndex">
+          <ion-icon name="ios-home"></ion-icon>
+          <p>首页</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button style="color:#ff6600">
+          <ion-icon name="ios-keypad"></ion-icon>
+          <p>商品</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabCart">
+          <ion-icon name="ios-cart"></ion-icon>
+          <p>购物车</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabUserCenter">
+          <ion-icon name="ios-person"></ion-icon>
+          <p>用户</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+

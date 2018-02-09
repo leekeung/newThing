@@ -1,0 +1,125 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header style="background:#E0D3D3;z-index:100">
+  
+  <ion-grid>
+    <ion-row align-items-center style="color:red;height:30px;">
+       <ion-col col-2>
+        <button ion-button clear style="padding:0" (click)="back()">
+          <ion-icon style="font-size:2.1em;color:red" class="ion-ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-8 style="font-family:STCaiyun;text-align:center;">
+        <img src="assets/img/navlogo.jpg" style="width:35%" alt="">
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" menuToggle>
+          <ion-icon style="font-size:2.1em;color:red" name="menu"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" (click)="tabSerach()">
+          <ion-icon style="font-size:2.1em;color:red" name="search"></ion-icon>
+        </button>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding style="background:#F2EAEA" >
+  <div class="cartBox" *ngIf="!products" >
+    <ion-icon class="ion-ios-cart-outline noneCart"></ion-icon>
+    <p>您的购物车还没有商品，快去挑选心爱的商品吧！</p>
+    <button ion-button larger color="danger" [navPush]="tabProducts">去逛逛</button>
+  </div>
+  <br><br><br>
+  <ion-row class="product-top clearFix" *ngIf="products">
+    <ion-col col-2 style="text-align:center" (click)="Allchecked()" >
+      <div class="checkBox">
+        <ion-icon *ngIf="isChecked" class="ion-ios-checkmark">
+            </ion-icon>
+      </div>
+    </ion-col>
+    <ion-col col-2>全选</ion-col>
+    <ion-col col-6 offset-2 style="text-align:right">清除下架商品</ion-col>        
+  </ion-row>
+  
+  <ion-list style="margin-top:5px" *ngIf="products" class="product-content">
+    <ion-item-sliding *ngFor="let item of products;let myIndex=index">
+      <ion-item >
+        <!--单选框-->
+        <div class="checkBox fl" (click)="checked(myIndex)">
+          <ion-icon *ngIf="item.isChecked==1?true:flase" class="ion-ios-checkmark">
+            </ion-icon>
+        </div>
+        <div class="pro-box">
+          <ion-thumbnail class="fl">
+            <img [src]="'assets/'+item.img1" alt="">
+          </ion-thumbnail>
+          <h6>{{item.title}}</h6>
+          <div class=" sum">￥{{item.price*item.sum+".00"}}</div>      
+        </div>
+        <div class="pro-btm">
+          <select name="" id="">
+            <option value="1">重量:{{item.weight}}</option>
+          </select>
+          <div class="count">
+            <a href="#" (click)="modifyCartCount(true,myIndex)">-</a>
+            <input type="text" [(ngModel)]="item.sum" readonly>
+            <a href="#" (click)=" modifyCartCount(false,myIndex)">+</a>          
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delList(item.pid,item.weight)">删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <br><br><br><br><br>
+</ion-content>
+
+  <ion-footer >
+    <ion-grid>
+      <ion-row class="pay" *ngIf="products">
+      <div class="total">
+        <p>合计: <span>￥{{total+'.00'}}</span></p>
+        <div class="express">(不含运费)</div>
+      </div>
+      <button ion-button color="danger" >确认结算</button>
+      </ion-row>
+      <ion-row class="navFooter">
+      <ion-col col-3>
+        <button icon-button [navPush]="Index">
+          <ion-icon name="ios-home"></ion-icon>
+          <p>首页</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabProducts">
+          <ion-icon name="ios-keypad"></ion-icon>
+          <p>商品</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button style="color:#ff6600">
+          <ion-icon name="ios-cart"></ion-icon>
+          <p>购物车</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabUserCenter">
+          <ion-icon name="ios-person"></ion-icon>
+          <p>用户</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  </ion-footer>
+

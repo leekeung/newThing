@@ -1,0 +1,52 @@
+<ion-menu [content]="content">
+
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title style="font-family:STCaiyun;">Daphne</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content class="content">
+    <ion-list>
+      <button ion-item >
+        首页
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        所有产品
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        粮油调味
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        休闲零食
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        生鲜水果
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        所有品牌
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item >
+        博客
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

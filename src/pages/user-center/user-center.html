@@ -1,0 +1,148 @@
+<!--
+  Generated template for the UserCenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header style="background:#E0D3D3;z-index:100">
+  
+  <ion-grid>
+    <ion-row align-items-center style="color:red;height:30px;">
+       <ion-col col-2>
+        <button ion-button clear style="padding:0" (click)="back()">
+          <ion-icon style="font-size:2.1em;color:red" class="ion-ios-arrow-back"></ion-icon>
+        </button>
+      </ion-col >
+     <ion-col col-8 style="font-family:STCaiyun;text-align:center;">
+        <img src="assets/img/navlogo.jpg" style="width:35%" alt="">
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" menuToggle>
+          <ion-icon style="font-size:2.1em;color:red" name="menu"></ion-icon>
+        </button>
+      </ion-col >
+      <ion-col col-1>
+        <button ion-button clear style="padding:0" (click)="tabSerach()" >
+        <ion-icon style="font-size:2.1em;color:red" name="search"></ion-icon>
+        </button>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding style="background:#F2EAEA">
+  <br><br><br>
+  <!--头像-->
+  <ion-list class="top">
+    <ion-item>
+      <ion-avatar item-start (click)="upDateAssets()" >
+        <div ng-controller="myCtrl">
+          <a ng-click="choosePicMenu()">
+          <img src="assets/img/getAvatar.do.jpg" alt="">
+          </a>
+        </div>
+      </ion-avatar>
+      <h6>18926673063</h6>
+    </ion-item>
+  </ion-list>
+  <!--order 订单-->
+  <ion-grid class="avatar">
+    <ion-row>
+      <ion-col>
+        <ion-icon class="ion-ios-paper-outline"></ion-icon>
+        <span>我的订单</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon class="ion-ios-clipboard-outline"></ion-icon>
+        <p>全部订单</p>
+      </ion-col>
+      <ion-col col-3>
+        <ion-icon class="ion-ios-folder-open-outline"></ion-icon>
+        <p>代付款</p>
+      </ion-col>
+      <ion-col col-3>
+        <ion-icon class="ion-ios-alarm-outline"></ion-icon>
+        <p>待收货</p>
+      </ion-col>
+      <ion-col col-3>
+        <ion-icon class="ion-ios-checkbox-outline"></ion-icon>
+        <p>已完成</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="vip">
+    <ion-item>
+      <ion-icon class="ion-logo-vimeo"></ion-icon>
+      会员等级
+      <ion-note item-end>普通会员 <ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list class="list">
+    <ion-item>
+      <ion-icon class="ion-logo-usd"></ion-icon>
+      优惠券
+      <ion-note item-end><ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon class="ion-ios-menu"></ion-icon>
+      积分
+      <ion-note item-end><ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-icon class="ion-ios-person"></ion-icon>
+      个人资料
+      <ion-note item-end><ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon class="ion-logo-css3"></ion-icon>
+      安全设置
+      <ion-note item-end><ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-icon class="ion-md-locate"></ion-icon>
+      收货地址
+      <ion-note item-end><ion-icon class="ion-md-arrow-dropright"></ion-icon></ion-note>
+    </ion-item>
+  </ion-list>
+  
+  <button ion-button block style="background:#fff;border:1px solid #ccc;color:#000">
+    退出当前账号</button>
+  <br><br><br><br>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabIndex">
+          <ion-icon name="ios-home"></ion-icon>
+          <p>首页</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabProducts">
+          <ion-icon name="ios-keypad"></ion-icon>
+          <p>商品</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button [navPush]="tabCart">
+          <ion-icon name="ios-cart"></ion-icon>
+          <p>购物车</p>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button icon-button style="color:#ff6600">
+          <ion-icon name="ios-person"></ion-icon>
+          <p>用户</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
